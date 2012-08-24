@@ -5,7 +5,7 @@ A collection of useful mixins I use in my projects
 
 ##Utilities
 
-###.sprite (x, y, sprite-img, width, height, spacing)
+####.sprite (x, y, sprite-img, width, height, spacing)
 
 Use this mixin to handle sprites in a simpler way.
 
@@ -20,7 +20,7 @@ E.g.
 }
 ```
 
-###.inline-block ()
+####.inline-block ()
 
 Polyfill mixin for inline-block display on elements.
 
@@ -31,7 +31,7 @@ a.button {
 }
 ```
 
-####.Sprite-icon (x, y, sprite-img, width, height, spacing)
+####.sprite-icon (x, y, sprite-img, width, height, spacing)
 
 Extends `.sprite`, use this mixin to handle icon sprites.
 Will apply `.inline-block` and hide text (good to use for span icons with explanatory text for accessibility).
@@ -244,6 +244,7 @@ E.g.
 ul, ol {
 	.type-padding-top(15);
 }
+```
 
 ###.type-padding-bottom (value)
 
@@ -254,6 +255,7 @@ E.g.
 ul, ol {
 	.type-padding-bottom(15);
 }
+```
 
 ###.type-margin (value-top, value-bottom)
 
@@ -275,6 +277,7 @@ E.g.
 ul, ol {
 	.type-margin-top(15);
 }
+```
 
 ###.type-margin-bottom (value)
 
@@ -285,6 +288,7 @@ E.g.
 ul, ol {
 	.type-margin-bottom(15);
 }
+```
 
 
 
