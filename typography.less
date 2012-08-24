@@ -1,0 +1,38 @@
+html {
+    font-size: 62.5%;
+}
+
+.type-size (@size) {
+    font-size: @size * 1px;
+    font-size: @size * 1rem / 10;
+}
+
+.type-padding-top (@value) {
+    padding-top: @value * 1px;
+    padding-top: @value * 1rem / 10;
+}
+
+.type-padding-bottom (@value) {
+    padding-bottom: @value * 1px;
+    padding-bottom: @value * 1rem / 10;
+}
+
+.type-padding (@val-top, @val-bottom) {
+    .type-padding-top(@val-top);
+    .type-padding-bottom(@val-bottom);
+}
+
+.type-margin-top (@value) {
+    margin-top: @value * 1px;
+    margin-top: @value * 1rem / 10;
+}
+
+.type-margin-bottom (@value) {
+    margin-bottom: @value * 1px;
+    margin-bottom: @value * 1rem / 10;
+}
+
+.type-margin (@val-top, @val-bottom) {
+    .type-margin-top(@val-top);
+    .type-margin-bottom(@val-bottom);
+}

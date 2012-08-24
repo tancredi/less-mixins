@@ -1,0 +1,64 @@
+.rounded-corners (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.rounded-corners-custom (@tl: 0, @tr: 0, @br: 0, @bl: 0) {
+    -webkit-border-radius: @tl @tr @br @bl;
+    -moz-border-radius: @tl @tr @br @bl;
+    border-radius: @tl @tr @br @bl;
+}
+
+.shadow (@x: 0, @y: 0, @blur: 3, @spread: 0, fade(#000, 5%)) {
+    -webkit-box-shadow: @x @y @blur @spread @color;
+    -moz-box-shadow: @x @y @blur @spread @color;
+    box-shadow: @x @y @blur @spread @color;
+}
+
+.inner-shadow (@x: 0, @y: 0, @blur: 3, @spread: 0, fade(#000, 5%)) {
+    -webkit-box-shadow: inset @x @y @blur @spread @color;
+    -moz-box-shadow: inset @x @y @blur @spread @color;
+    box-shadow: inset @x @y @blur @spread @color;
+}
+
+.no-shadow () {
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.multi-shadow (@s1, @s2: 0 0 0 0 transparent, @s3: 0 0 0 0 transparent, @s4: 0 0 0 0 transparent, @s5: 0 0 0 0 transparent) {
+    -webkit-box-shadow: @s1; // fallback
+    -webkit-box-shadow: @s1, @s2, @s3, @s4, @s5;
+    -moz-box-shadow: @s1 // fallback
+    -moz-box-shadow: @s1, @s2, @s3, @s4, @s5;
+    box-shadow: @s1; // fallback
+    box-shadow: @s1, @s2, @s3, @s4, @s5;
+}
+
+.transition (@prop: all, @time: .2s, @ease: ease-in-out) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+.vertical-gradient (@start: #000, @stop: #fff) {
+	@falloff: (@start + @stop) / 2;
+    background: @falloff;
+    background: @falloff -webkit-gradient(linear, left top, left bottom, from(@start), to(@stop));
+    background: @falloff -moz-linear-gradient(center top, @start 0%, @stop 100%);
+    background: @falloff -moz-gradient(center top, @start 0%, @stop 100%);
+}
+
+.opacity (@opacity: 1) {
+    @ie: @opacity * 100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ie})";
+    filter: alpha(opacity=@ie);
+    -webkit-opacity: @opacity;
+    -khtml-opacity: @opacity;
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
