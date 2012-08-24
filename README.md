@@ -289,7 +289,3 @@ ul, ol {
 	.type-margin-bottom(15);
 }
 ```
-
-
-
-
