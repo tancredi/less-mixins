@@ -1,3 +1,10 @@
+.sprite (@x, @y, @sprite-img, @width, @height, @spacing) {
+    background-image: url("@{sprite-img}");
+    width: @width - (@spacing * 2);
+    height: @height - (@spacing * 2);
+    background-position: -(@width * @x + @spacing) -(@height * @y + @spacing);
+}
+
 .sprite-icon (@x: 0, @y: 0, @sprite-img, @width: 18px, @height: 18px, @spacing: 0) {
     .sprite(@x, @y, @sprite-img, @width, @height, @spacing);
     .inline-block;
@@ -6,4 +13,45 @@
     overflow: hidden;
     background-repeat: no-repeat;
     vertical-align: middle;
+}
+
+.clearfix () {
+    zoom: 1;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    
+    &:after {
+        clear: both;
+    }
+}
+
+.inline-block () {
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom:1;
+    *display: inline;
+}
+
+.hidden () {
+    display: none;
+}
+
+.ellipsis () {
+	text-overflow: ellipsis;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.list () {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	>li {
+		margin: 0;
+	}
 }

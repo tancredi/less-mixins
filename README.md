@@ -1,18 +1,45 @@
 LESS Mixins
 ==============
 
-A collection of userful mixins I use in my projects
+A collection of useful mixins I use in my projects
 
 ##Utilities
 
+####.Sprite (x, y, sprite-img, width, height, spacing)
+
+Use this mixin to handle sprites in a simpler way.
+
+E.g.
+```less
+.first-piece () {
+	.sprite (0, 0, 'path/to/sprite.png', 100px, 100px, 0);
+}
+
+.second-piece () {
+	.sprite (1, 0, 'path/to/sprite.png', 100px, 100px, 0);
+}
+```
+
+###.inline-block ()
+
+Compatibility mixin for inline-block display on elements.
+
+E.g.
+```less
+a.button {
+	.inline-block();
+}
+```
+
 ####.Sprite-icon (x, y, sprite-img, width, height, spacing)
 
-Use this sprite to handle icon sprites.
+Extends `.sprite`, use this mixin to handle icon sprites.
+Will apply `.inline-block` and hide text (good to use for span icons with explanatory text for accessibility).
 
 E.g.
 ```less
 .icons-set-small (@id, @status: 0) {
-	.sprite-icon(@id, @status, 'path/to/sprite.png', 18px, 18px, 0);
+	.sprite-icon(@id, @status, 'path/to/icons-set.png', 18px, 18px, 0);
 }
 
 .icon-small-first {
@@ -31,5 +58,54 @@ E.g.
 	}
 }
 ```
+
+###.clearfix ()
+
+Standard clearfix polyfill.
+
+E.g.
+```less
+.columns-wrapper {
+	.clearfix();
+}
+```
+
+###.hidden ()
+
+Simply applying display: hidden, good for readability.
+
+E.g.
+```less
+.tooltip {
+	.hidden();
+}
+```
+
+###.ellipsis ()
+
+Compatibility polyfill hiding text overflows with `hellip;`.
+Apply a max-width and .inline-block() if needed.
+
+E.g.
+```less
+span.long-text {
+	.inline-block();
+	width: 100%;
+	.ellipsis();
+}
+```
+
+###.list ()
+
+Removes list default styling. Useful to keep DRY styles when using list elements
+
+E.g.
+```less
+ul.navigation {
+	.list()
+}
+```
+
+
 
 
