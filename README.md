@@ -10,7 +10,8 @@ A collection of userful mixins I use in my projects
 Use this sprite to handle icon sprites.
 
 E.g.
-```.icons-set-small (@id, @status: 0) {
+```less
+.icons-set-small (@id, @status: 0) {
 	.sprite-icon(@id, @status, 'path/to/sprite.png', 18px, 18px, 0);
 }
 
@@ -28,6 +29,7 @@ E.g.
 	&:hover {
 		.icons-set-small(0, 1);
 	}
-}```
+}
+```
 
 
